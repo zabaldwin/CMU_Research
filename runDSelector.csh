@@ -85,5 +85,6 @@ echo "Histograms have been transfered"
 #mv FlatTree_$MyRun.root $MyFlatTreeOutDir
 #echo "FlatTree has been transfered" 
 
+exit 0
 
 
