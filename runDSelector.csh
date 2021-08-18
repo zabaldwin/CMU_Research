@@ -2,8 +2,8 @@
 
         #####################################################################################
         #                                                                                   #
-        #  Bourne shell script for submitting a job to the SLURM queue @ CMU using SBATCH   # 
-        #                              -Created by Zachary Baldwin                          #
+        #        Tee C shell script used to run a DSelector on the SLURM queue @ CMU        # 
+        #                              -Created by Zachary Baldwin, June 2019               #
         #                                                                                   # 
         #####################################################################################
 
