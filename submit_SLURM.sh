@@ -45,8 +45,11 @@ MyCodeDir=
 # Input pathway to desired TTrees
 MyDataInDir=
 
-# Inpute specific TTree base name i.e. tree_pi0pi0pippim__B4
+# Input specific TTree base name i.e. tree_pi0pi0pippim__B4
 MyTreeDirectory=
+
+# Input specific pathway this bash script will be executed 
+MyBashPath=
 
 # Input pathway to /raid directory where histogram/TTree/FlatTree file will go
 # (must specify atleast one pathway)
@@ -107,7 +110,7 @@ if [[ $Varname == "all" ]]; then
     echo $MyRun
     
     # Submits a unqie job into SLURM
-    sbatch --job-name=${MyProcess}_${MyRun} --ntasks=${THREADS}  --partition=${QUEUE} --time=00:40:00 --exclude=qcdcomp-0-0 --output=$MyLogDir/${MyProcess}_${MyRun}.out --error=$MyLogDir/${MyProcess}_${MyRun}.err --export=MyRun=$MyRun,MyDataInDir=$MyDataInDir,MyDataOutDir=$MyDataOutDir,MyTreeOutDir=$MyTreeOutDir,MyCodeDir=$MyCodeDir,MyEnv=$MyEnv,MyProcess=$MyProcess,MyRunningDir=$MyRunningDir,MyDataOutDirDir=$MyDataOutDirDir,MySCP=$MySCP /home/zbaldwin/cmu_gluex/batch/runDSelector_PWA_Data.csh 
+    sbatch --job-name=${MyProcess}_${MyRun} --ntasks=${THREADS}  --partition=${QUEUE} --time=00:40:00 --exclude=qcdcomp-0-0 --output=$MyLogDir/${MyProcess}_${MyRun}.out --error=$MyLogDir/${MyProcess}_${MyRun}.err --export=MyRun=$MyRun,MyDataInDir=$MyDataInDir,MyDataOutDir=$MyDataOutDir,MyTreeOutDir=$MyTreeOutDir,MyCodeDir=$MyCodeDir,MyEnv=$MyEnv,MyProcess=$MyProcess,MyRunningDir=$MyRunningDir,MyDataOutDirDir=$MyDataOutDirDir,MySCP=$MySCP $MyBashPath/runDSelector.csh 
     
     # In the past SLURM had issues, this sleep command fixed that (ISSUE RESOLVED JAN 2020)
     #sleep $SLEEP
