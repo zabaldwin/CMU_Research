@@ -5,7 +5,7 @@
         #####################################################################################
         #                                                                                   #
         #  Bourne shell script for submitting a job to the SLURM queue @ CMU using SBATCH   # 
-        #                              -Created by Zachary Baldwin                          #
+        #                          -Created by Zachary Baldwin, June 2019                   #
         #                                                                                   # 
         #####################################################################################
 
