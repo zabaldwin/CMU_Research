@@ -46,7 +46,7 @@ MyCodeDir=
 MyDataInDir=
 
 # Input specific TTree base name i.e. tree_pi0pi0pippim__B4
-MyTreeDirectory=
+MyTreeName=
 
 # Input specific pathway this bash script will be executed 
 MyBashPath=
@@ -134,7 +134,7 @@ else
             echo $RunNumber
             i=$(($i + 1))
 
-        for MyRun in ${MyDataInDir}/${MyTreeDirectory}_0${RunNumber}.root; do 
+        for MyRun in ${MyDataInDir}/${MyTreeName}_0${RunNumber}.root; do 
         #for MyRun in ${MyDataInDir}/${MyUpdatedTreeName}_${RunNumber}.root; do
 
         MyRun=`basename ${MyRun}`
