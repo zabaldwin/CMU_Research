@@ -145,7 +145,7 @@ else
         # Echos myrun to make sure run number matches (if not, there are issues)
         echo $MyRun
     
-        sbatch --job-name=${MyProcess}_${MyRun} --ntasks=${THREADS} --partition=${QUEUE} --exclude=qcdcomp-0-0 --time=10:00:00 --output=$MyLogDir/${MyProcess}_${MyRun}.out --error=$MyLogDir/${MyProcess}_${MyRun}.err --export=MyRun=$MyRun,MyDataInDir=$MyDataInDir,MyDataOutDir=$MyDataOutDir,MyTreeOutDir=$MyTreeOutDir,MyCodeDir=$MyCodeDir,MyEnv=$MyEnv,MyProcess=$MyProcess,MyRunningDir=$MyRunningDir,MyDataOutDirDir=$MyDataOutDirDir,MySCP=$MySCP /home/zbaldwin/cmu_gluex/batch/runDSelector_PWA_Data.csh
+        sbatch --job-name=${MyProcess}_${MyRun} --ntasks=${THREADS} --partition=${QUEUE} --exclude=qcdcomp-0-0 --time=10:00:00 --output=$MyLogDir/${MyProcess}_${MyRun}.out --error=$MyLogDir/${MyProcess}_${MyRun}.err --export=MyRun=$MyRun,MyDataInDir=$MyDataInDir,MyDataOutDir=$MyDataOutDir,MyTreeOutDir=$MyTreeOutDir,MyCodeDir=$MyCodeDir,MyEnv=$MyEnv,MyProcess=$MyProcess,MyRunningDir=$MyRunningDir,MyDataOutDirDir=$MyDataOutDirDir,MySCP=$MySCP $MyBashPath/runDSelector.csh
       
 
         done
