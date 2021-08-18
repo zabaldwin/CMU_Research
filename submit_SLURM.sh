@@ -11,7 +11,7 @@
 
 #
 #       This bash script has the option of running over a single TTree or multiple TTrees.
-#
+#   
 #
 #
 #
@@ -72,7 +72,6 @@ MySCP=/usr/bin/scp
 
 # Creates directory pathways
 mkdir -p $MyDataOutDir
-mkdir -p $MyTreeOutDir
 mkdir -p $MyLogDir
 
 echo These are the pathways that were specified
