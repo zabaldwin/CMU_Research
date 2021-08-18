@@ -135,7 +135,7 @@ else
             i=$(($i + 1))
 
         for MyRun in ${MyDataInDir}/${MyTreeName}_0${RunNumber}.root; do 
-        #for MyRun in ${MyDataInDir}/${MyUpdatedTreeName}_${RunNumber}.root; do
+        
 
         MyRun=`basename ${MyRun}`
 
