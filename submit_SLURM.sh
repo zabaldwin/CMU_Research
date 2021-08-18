@@ -110,7 +110,7 @@ if [[ $Varname == "all" ]]; then
     echo $MyRun
     
     # Submits a unqie job into SLURM
-    sbatch --job-name=${MyProcess}_${MyRun} --ntasks=${THREADS}  --partition=${QUEUE} --time=00:40:00 --exclude=qcdcomp-0-0 --output=$MyLogDir/${MyProcess}_${MyRun}.out --error=$MyLogDir/${MyProcess}_${MyRun}.err --export=MyRun=$MyRun,MyDataInDir=$MyDataInDir,MyDataOutDir=$MyDataOutDir,MyTreeOutDir=$MyTreeOutDir,MyCodeDir=$MyCodeDir,MyEnv=$MyEnv,MyProcess=$MyProcess,MyRunningDir=$MyRunningDir,MyDataOutDirDir=$MyDataOutDirDir,MySCP=$MySCP $MyBashPath/runDSelector.csh 
+    sbatch --job-name=${MyProcess}_${MyRun} --ntasks=${THREADS}  --partition=${QUEUE} --time=00:40:00 --exclude=qcdcomp-0-0 --output=$MyLogDir/${MyProcess}_${MyRun}.out --error=$MyLogDir/${MyProcess}_${MyRun}.err --export=MyRun=$MyRun,MyDataInDir=$MyDataInDir,MyDataOutDir=$MyDataOutDir,MyCodeDir=$MyCodeDir,MyProcess=$MyProcess,MyRunningDir=$MyRunningDir,MySCP=$MySCP $MyBashPath/runDSelector.csh 
     
     # In the past SLURM had issues, this sleep command fixed that (ISSUE RESOLVED JAN 2020)
     #sleep $SLEEP
@@ -145,7 +145,7 @@ else
         # Echos myrun to make sure run number matches (if not, there are issues)
         echo $MyRun
     
-        sbatch --job-name=${MyProcess}_${MyRun} --ntasks=${THREADS} --partition=${QUEUE} --exclude=qcdcomp-0-0 --time=10:00:00 --output=$MyLogDir/${MyProcess}_${MyRun}.out --error=$MyLogDir/${MyProcess}_${MyRun}.err --export=MyRun=$MyRun,MyDataInDir=$MyDataInDir,MyDataOutDir=$MyDataOutDir,MyTreeOutDir=$MyTreeOutDir,MyCodeDir=$MyCodeDir,MyEnv=$MyEnv,MyProcess=$MyProcess,MyRunningDir=$MyRunningDir,MyDataOutDirDir=$MyDataOutDirDir,MySCP=$MySCP $MyBashPath/runDSelector.csh
+        sbatch --job-name=${MyProcess}_${MyRun} --ntasks=${THREADS} --partition=${QUEUE} --exclude=qcdcomp-0-0 --time=10:00:00 --output=$MyLogDir/${MyProcess}_${MyRun}.out --error=$MyLogDir/${MyProcess}_${MyRun}.err --export=MyRun=$MyRun,MyDataInDir=$MyDataInDir,MyDataOutDir=$MyDataOutDir,MyCodeDir=$MyCodeDir,MyProcess=$MyProcess,MyRunningDir=$MyRunningDir,MySCP=$MySCP $MyBashPath/runDSelector.csh
       
 
         done
