@@ -1,4 +1,18 @@
-#!/bin/tcsh                                                                                                                                                                       
+#!/bin/tcsh     
+
+        #####################################################################################
+        #                                                                                   #
+        #  Bourne shell script for submitting a job to the SLURM queue @ CMU using SBATCH   # 
+        #                              -Created by Zachary Baldwin                          #
+        #                                                                                   # 
+        #####################################################################################
+
+#
+#       The tcsh script that is called from submit_SLURM.sh that will run 
+#                over a desired DSelector with defined inputs 
+#
+#
+#
 
 echo ----------------------JOB_INFO--------------------------------
 echo 'Submitted from' $SLURM_SUBMIT_HOST
