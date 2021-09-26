@@ -63,7 +63,7 @@ void ProcessEvents_FlatTree_Example()
     double locHistAccidWeightFactor, locWeight;
 
     // Other useful values 
-    double locDeltaT_RF;   
+    double locChi2_NDF_KinFit; 
 
     // Initialize TLorentzVectors predefined in a flat tree
     TLorentzVector* beam_p4_kin = 0;
@@ -137,7 +137,7 @@ void ProcessEvents_FlatTree_Example()
     // Other values
     flattree->SetBranchAddress("AccidentalWeight", &locHistAccidWeightFactor);     
     flattree->SetBranchAddress("SidebandWeight", &locWeight);
-    flattree->SetBranchAddress("DeltaT_RF", &locDeltaT_RF); 
+    flattree->SetBranchAddress("Chi2_NDF_KinFit", &locChi2_NDF_KinFit);
 
     // Initialize Desired Histograms       
     TH1F* dHist_InvariantMass_Pi0Eta = new TH1F("InvariantMass_Pi0Eta", ";m(#pi^{0} #eta); Entries/20 MeV", 125, 0.5, 3.0); 
