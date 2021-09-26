@@ -352,20 +352,20 @@ Bool_t DSelector_Example::Process(Long64_t locEntry)
 
 		/********************************************* GET COMBO RF TIMING INFO *****************************************/
         
-        //Very usefull code to perform accidental subtraction. Before hand, common to use (1/#BeamBunches) but
-        //was not specfic enough for each run number and did not skip nearest beam bunch in order to not subrtract 
-        //actual signal data. The below code is necessary to get correct photon data instead of incorrectly 
-        //tagged photons. 
+        	//Very usefull code to perform accidental subtraction. Before hand, common to use (1/#BeamBunches) but
+        	//was not specfic enough for each run number and did not skip nearest beam bunch in order to not subrtract 
+        	//actual signal data. The below code is necessary to get correct photon data instead of incorrectly 
+        	//tagged photons. 
 		TLorentzVector locBeamX4_Measured = dComboBeamWrapper->Get_X4_Measured();
-        TLorentzVector locProtonX4_Measured = dProtonWrapper->Get_X4_Measured();
+        	TLorentzVector locProtonX4_Measured = dProtonWrapper->Get_X4_Measured();
 
-        TLorentzVector locPhoton1X4_Measured = dPhoton1Wrapper->Get_X4_Shower();
-        TLorentzVector locPhoton2X4_Measured = dPhoton2Wrapper->Get_X4_Shower();
-        TLorentzVector locPhoton3X4_Measured = dPhoton3Wrapper->Get_X4_Shower();
-        TLorentzVector locPhoton4X4_Measured = dPhoton4Wrapper->Get_X4_Shower();
+        	TLorentzVector locPhoton1X4_Measured = dPhoton1Wrapper->Get_X4_Shower();
+        	TLorentzVector locPhoton2X4_Measured = dPhoton2Wrapper->Get_X4_Shower();
+        	TLorentzVector locPhoton3X4_Measured = dPhoton3Wrapper->Get_X4_Shower();
+        	TLorentzVector locPhoton4X4_Measured = dPhoton4Wrapper->Get_X4_Shower();
 
         
-        Double_t locBunchPeriod = dAnalysisUtilities.Get_BeamBunchPeriod(Get_RunNumber());
+        	Double_t locBunchPeriod = dAnalysisUtilities.Get_BeamBunchPeriod(Get_RunNumber());
 		Double_t locDeltaT_RF = dAnalysisUtilities.Get_DeltaT_RF(Get_RunNumber(), locBeamX4_Measured, dComboWrapper);
 		Int_t locRelBeamBucket = dAnalysisUtilities.Get_RelativeBeamBucket(Get_RunNumber(), locBeamX4_Measured, dComboWrapper); // 0 for in-time events, non-zero integer for out-of-time photons
 		Int_t locNumOutOfTimeBunchesInTree = 4; //YOU need to specify this number
