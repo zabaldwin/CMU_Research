@@ -39,10 +39,12 @@ void ProcessEvents_FlatTree_Example()
 {
 
     // Path to flattree data
-    TFile *file_PathWay=new TFile("/raid4/zbaldwin/FlatTree_Pi0Eta_Data/flattree_sum_ALL.root");
+    TFile *file_PathWay=new TFile("pi0eta_flattree.root"); 
+                // Flat tree created from DSelector_Example
+    
     // Flattree name
     TTree *flattree=(TTree*)file_PathWay->Get("pi0pi0pippim__B4"); 
-    TString outFileName = "flattree_sum_AMO.root";
+    TString outFileName = "flattree_example.root";
 
     // Initialize particle information found in FlatTree
     double Beam_px, Beam_py, Beam_pz, Beam_E;
